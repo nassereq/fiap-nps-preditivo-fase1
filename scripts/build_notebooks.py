@@ -119,7 +119,19 @@ tbl = df.groupby("faixa_atraso", observed=True)["nps_score"].agg(["mean", "media
 display(tbl)
 
 fig, ax = plt.subplots(figsize=(8, 4))
-sns.boxplot(data=df, x="faixa_atraso", y="nps_score", order=labels, ax=ax, palette="RdYlGn")
+# RdYlGn_r: verde = melhor (sem atraso), vermelho = pior (4+ dias)
+sns.boxplot(
+    data=df,
+    x="faixa_atraso",
+    y="nps_score",
+    order=labels,
+    hue="faixa_atraso",
+    hue_order=labels,
+    palette="RdYlGn_r",
+    dodge=False,
+    legend=False,
+    ax=ax,
+)
 ax.set_title("NPS por faixa de atraso na entrega")
 plt.xticks(rotation=15)
 plt.tight_layout()
