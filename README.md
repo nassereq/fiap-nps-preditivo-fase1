@@ -1,6 +1,6 @@
 # Tech Challenge Fase 1 — Case NPS Preditivo
 
-**Repositório público:** https://github.com/nassereq/fiap-nps-preditivo-fase1
+**Repositório público:** https://github.com/nassereq/Tech_Challenge---Fase_1---Raphael_Reis
 
 Repositório pronto para entrega: **tratamento da base**, **EDA orientada a negócio**, **modelo preditivo opcional** (implementado), **documentação escrita**, **slides base** (PPTX) e **roteiro de vídeo**.
 
