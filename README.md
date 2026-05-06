@@ -42,8 +42,8 @@ Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, log�
 Clone o repositório e entre na pasta do projeto (nome da pasta = nome do repo):
 
 ```bash
-git clone https://github.com/nassereq/fiap-nps-preditivo-fase1.git
-cd fiap-nps-preditivo-fase1
+git clone https://github.com/nassereq/Tech_Challenge---Fase_1---Raphael_Reis.git
+cd Tech_Challenge---Fase_1---Raphael_Reis
 ```
 
 *(Se estiver a trabalhar a partir de um ZIP da FIAP, descompacte e use `cd` para a pasta raiz onde estão `README.md`, `data/` e `notebooks/`.)*

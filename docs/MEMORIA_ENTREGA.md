@@ -1,6 +1,6 @@
 # Memória de entrega — Tech Challenge Fase 1 (NPS Preditivo)
 
-Documento complementar ao repositório público **https://github.com/nassereq/fiap-nps-preditivo-fase1**: respostas objetivas aos itens **1**, **2**, **3** (síntese) e **4** do enunciado. A análise detalhada está em `notebooks/01_eda_nps.ipynb`; o modelo em `notebooks/02_modelo_nps.ipynb`.
+Documento complementar ao repositório público **https://github.com/nassereq/Tech_Challenge---Fase_1---Raphael_Reis**: respostas objetivas aos itens **1**, **2**, **3** (síntese) e **4** do enunciado. A análise detalhada está em `notebooks/01_eda_nps.ipynb`; o modelo em `notebooks/02_modelo_nps.ipynb`.
 
 ---
 
