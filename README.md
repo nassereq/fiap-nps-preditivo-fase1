@@ -84,23 +84,4 @@ python scripts/gerar_slides.py
 
 Para desenvolvimento interativo: `jupyter notebook` ou JupyterLab, abrindo os ficheiros em `notebooks/`.
 
-## Entrega académica (checklist)
 
-- [x] Código e dados tratados no GitHub público (link no topo).
-- [x] README com objetivo, dados, metodologia e instruções de reprodução **sem caminhos absolutos da máquina**.
-- [x] Documentação escrita do case (`docs/MEMORIA_ENTREGA.md`).
-- [x] Slides e figuras em `reports/` (use a versão final do `.pptx` que submeter à FIAP).
-- [ ] Vídeo executivo (≤ 5 min), conforme `docs/ROTEIRO_VIDEO_FINAL.md` ou `docs/ROTEIRO_VIDEO.md`.
-- [ ] Submeter na plataforma FIAP: **URL do repositório** + ficheiros pedidos (vídeo/slides), conforme orientação da disciplina.
-
-### Dica visual para os slides
-
-Inserir nos slides os PNG `fig01` … `fig10` de `reports/` onde fizer sentido na narrativa (atraso, ruptura, modelo, etc.).
-
-## Requisitos
-
-Ver `requirements.txt` (pandas, numpy, matplotlib, seaborn, scikit-learn ≥ 1.4, jupyter, nbformat, joblib, python-pptx).
-
-## Licença / uso
-
-Projeto acadêmico FIAP — uso educacional.
