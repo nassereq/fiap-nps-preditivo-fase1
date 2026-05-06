@@ -2,11 +2,11 @@
 
 **Repositório público:** https://github.com/nassereq/Tech_Challenge---Fase_1---Raphael_Reis
 
-Repositório pronto para entrega: **tratamento da base**, **EDA orientada a negócio**, **modelo preditivo opcional** (implementado), **documentação escrita**, **slides base** (PPTX) e **roteiro de vídeo**.
+Projeto de entrega: **tratamento da base**, **EDA orientada a negócio**, **modelo preditivo** (implementado), **documentação escrita**, **slides** e **roteiros para vídeo**.
 
 ## Objetivo do projeto
 
-Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, logística e atendimento; comunicar insights a gestores; e (opcional no enunciado, **entregue aqui**) construir um **modelo em Python** que estima o `nps_score` antes da pesquisa, para priorização operacional.
+Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, logística e atendimento; comunicar insights a gestores; e construir um **modelo em Python** que estima o `nps_score` antes da pesquisa, para priorização operacional.
 
 ## Estrutura de pastas
 
@@ -19,10 +19,11 @@ Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, log�
 | `scripts/prepare_data.py` | Validação, features derivadas e export do CSV processado. |
 | `scripts/build_notebooks.py` | Regenera os notebooks a partir de templates em Python (opcional). |
 | `scripts/gerar_slides.py` | Gera `reports/Apresentacao_NPS_Fase1.pptx`. |
-| `reports/` | PNGs da EDA e do modelo + PPTX base da apresentação. |
+| `reports/` | PNGs da EDA e do modelo + apresentação(ões) em `.pptx`. |
 | `models/` | `pipeline_nps_hgb.joblib` (treinado ao executar o notebook 02). |
 | `docs/MEMORIA_ENTREGA.md` | Respostas aos itens 1, 2, 3 (síntese) e 4 do desafio. |
-| `docs/ROTEIRO_VIDEO.md` | Roteiro sugerido para o vídeo de até 5 minutos. |
+| `docs/ROTEIRO_VIDEO.md` | Roteiro genérico para vídeo (até 5 min). |
+| `docs/ROTEIRO_VIDEO_FINAL.md` | Roteiro alinhado aos slides revisados (ensaio executivo). |
 
 ## Base de dados
 
@@ -36,41 +37,65 @@ Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, log�
 2. **EDA:** distribuição do NPS, tríade Detrator/Neutro/Promotor, atraso, reclamações, atendimento, CSAT interno, região/tenure, “ponto de ruptura”, correlações — ver `docs/MEMORIA_ENTREGA.md`.
 3. **Modelagem:** `HistGradientBoostingRegressor` em `Pipeline` com `ColumnTransformer` (numéricas + região em one-hot); hold-out 80/20; MAE, RMSE, R²; importância por permutação; artefato em `models/`.
 
-## Como reproduzir (Windows / PowerShell)
+## Obter o código
+
+Clone o repositório e entre na pasta do projeto (nome da pasta = nome do repo):
+
+```bash
+git clone https://github.com/nassereq/fiap-nps-preditivo-fase1.git
+cd fiap-nps-preditivo-fase1
+```
+
+*(Se estiver a trabalhar a partir de um ZIP da FIAP, descompacte e use `cd` para a pasta raiz onde estão `README.md`, `data/` e `notebooks/`.)*
+
+## Como reproduzir
+
+### Windows (PowerShell)
+
+Na **raiz do repositório** (após o `cd` acima):
 
 ```powershell
-cd "c:\Users\capis\OneDrive\Área de Trabalho\FIAP\Preditivo-Cursor"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# 1) Base processada
 python scripts\prepare_data.py
 
-# 2) EDA (gera PNGs em reports/)
 jupyter nbconvert --to notebook --execute notebooks\01_eda_nps.ipynb --inplace
-
-# 3) Modelo (gera/atualiza joblib e figuras 09–10)
 jupyter nbconvert --to notebook --execute notebooks\02_modelo_nps.ipynb --inplace
 
-# 4) Slides PowerPoint (texto executivo; insira as figuras de reports/ se desejar)
 python scripts\gerar_slides.py
 ```
 
-Para desenvolvimento interativo: `jupyter notebook notebooks\01_eda_nps.ipynb`.
+### Linux ou macOS (bash/zsh)
 
-## Entregas do desafio (checklist)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-- [x] Repositório com tratamento, EDA, modelo e pipeline.
-- [x] README com objetivo, dados, metodologia e reprodução.
-- [x] Documentação escrita (`docs/MEMORIA_ENTREGA.md`).
-- [x] Material de slides (`reports/Apresentacao_NPS_Fase1.pptx`) + figuras em `reports/`.
-- [ ] **Vídeo (até 5 min):** gravar conforme `docs/ROTEIRO_VIDEO.md` (não automatizável no repositório).
-- [ ] **GitHub público:** criar repositório, `git init`, commit e publicar o link na plataforma FIAP.
+python scripts/prepare_data.py
 
-### Dica para os slides finais
+jupyter nbconvert --to notebook --execute notebooks/01_eda_nps.ipynb --inplace
+jupyter nbconvert --to notebook --execute notebooks/02_modelo_nps.ipynb --inplace
 
-Abra o `.pptx` e **insira** os arquivos `fig01_*.png` … `fig10_*.png` nos slides correspondentes (visual forte para gestores).
+python scripts/gerar_slides.py
+```
+
+Para desenvolvimento interativo: `jupyter notebook` ou JupyterLab, abrindo os ficheiros em `notebooks/`.
+
+## Entrega académica (checklist)
+
+- [x] Código e dados tratados no GitHub público (link no topo).
+- [x] README com objetivo, dados, metodologia e instruções de reprodução **sem caminhos absolutos da máquina**.
+- [x] Documentação escrita do case (`docs/MEMORIA_ENTREGA.md`).
+- [x] Slides e figuras em `reports/` (use a versão final do `.pptx` que submeter à FIAP).
+- [ ] Vídeo executivo (≤ 5 min), conforme `docs/ROTEIRO_VIDEO_FINAL.md` ou `docs/ROTEIRO_VIDEO.md`.
+- [ ] Submeter na plataforma FIAP: **URL do repositório** + ficheiros pedidos (vídeo/slides), conforme orientação da disciplina.
+
+### Dica visual para os slides
+
+Inserir nos slides os PNG `fig01` … `fig10` de `reports/` onde fizer sentido na narrativa (atraso, ruptura, modelo, etc.).
 
 ## Requisitos
 
