@@ -19,7 +19,7 @@ Entender **o que move o NPS** em um e-commerce a partir de dados de pedido, log�
 | `scripts/prepare_data.py` | Validação, features derivadas e export do CSV processado. |
 | `scripts/build_notebooks.py` | Regenera os notebooks a partir de templates em Python (opcional). |
 | `scripts/gerar_slides.py` | Gera `reports/Apresentacao_NPS_Fase1.pptx`. |
-| `reports/` | PNGs da EDA e do modelo + apresentação(ões) em `.pptx`. |
+| `reports/` | PNGs da EDA e do modelo |
 | `models/` | `pipeline_nps_hgb.joblib` (treinado ao executar o notebook 02). |
 | `docs/MEMORIA_ENTREGA.md` | Respostas aos itens 1, 2, 3 (síntese) e 4 do desafio. |
 | `docs/ROTEIRO_VIDEO.md` | Roteiro genérico para vídeo (até 5 min). |
